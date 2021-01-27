@@ -26,12 +26,12 @@ def get_frame_from_video(self, interval):
 
     while True:
         success, frame = video_capture.read()
+        if not success:
+            print('video is all read')
+            break
         if (i / fps - j / fps) >= interval:
             j = i
             cv2.imwrite(framePath + '/' + str(int(i / fps)) + '.jpg', frame)
             print(framePath + '/' + str(int(i / fps)) + '.jpg')
         i += 1
-        if not success:
-            print('video is all read')
-            break
     print('Split Over!')
