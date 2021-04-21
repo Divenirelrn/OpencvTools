@@ -6,7 +6,7 @@ img_path = "./dog-cycle-car.png"
 
 img = cv2.imread(img_path)
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-# img = img[::-1].transpose(1,3).copy()
+# img = img[:,:,::-1].transpose((2,0,1)).copy()
 # img = img[np.newaxis, :]
 img = cv2.resize(img, (418, 418))
 
